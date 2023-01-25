@@ -1,0 +1,49 @@
+/* ----------------------------------------Class Practice */
+/* #container{
+    background-color: aqua;
+}
+
+#heading1 {
+    color: darkblue;
+}
+
+#heading2 {
+    color: darkblue;
+} */
+
+/* ---------------------------------------Coding Assignment 1: */
+/* .title {
+    background-color:rgb(127, 227, 236);
+}
+
+#header1 {
+    color: rgb(40, 59, 123);
+}
+
+#header2 {
+    color: rgb(64, 77, 119);
+}
+
+#header3 {
+    color: rgb(92, 97, 114);
+} */
+
+/* ---------------------------------------Coding Assignment 2: */
+
+.logoImage {
+    width: 50px;
+    height: 50px;
+}
+
+.userIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.headingComponentStyles {
+    background-color: rgb(245, 225, 201);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 1%;
+}

@@ -1,0 +1,23 @@
+1.What is JSX?
+->JSX is HTML like syntax used to make writing code in React easy(syntax extension to Javascript)
+
+2.Superpowers of JSX
+->i)Easy to read = Readability (compared to React.createElement)
+ii)Easy to write = HTML like syntax and much better when compared to React.createElement way
+Ref:https://www.geeksforgeeks.org/what-are-the-advantages-of-using-jsx-in-reactjs/
+
+3.Role of type attribute in script tag. What options can I use there?
+->script type attribute can have values: modules, importmap, blocking
+i)If the script is Javascript code, then its encouraged that we omit the type attribute to indicate the scrit as JS only
+ii)module: This value causes the code to be treated as a JavaScript module.
+Unlike classic scripts, module scripts require the use of the CORS protocol for cross-origin fetching
+Ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+
+4.{TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX
+->{TitleComponent} - Functions are not valid as a React child warning is thrown and its not rendered
+To render it, call the functional component like this {TitleComponent()}
+{<TitleComponent/>} - Will render that functional component, 
+<TitleComponent/> intern gets converted to React.createElemnt() which is written in JS syntax inside {}
+{<TitleComponent></TitleComponent>} - Will render that functional component
+<TitleComponent></TitleComponent> intern gets converted to React.createElemnt(),
+which is written in JS syntax inside {}

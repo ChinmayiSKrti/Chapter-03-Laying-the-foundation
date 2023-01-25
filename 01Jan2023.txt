@@ -1,0 +1,122 @@
+1.browserlist - last 2 Chrome versions doesnt mean it'll work only in last 2 Chrome versions
+It means it guarentees that it works in last 2 Chrome versions, 
+may or may not work on different versions or different browsers
+
+2.browserlist, we are telling that browsers other than these listed browsers,
+might not support some code
+Eg:If code uses ES6 and some browser which doesnt support might need polyfills to understand those
+newer code, this can be done by Babel
+We don not need to write polyfills, Babel does it for us
+
+3."npm run" Can be thought as equivalent to "npx"
+npm run start = npm start
+npm install = npm i
+After configuring start and build script in package.json, we can run cmds
+"npx parcel index.html" as "npm run start" or "npm start" AND
+"npx parcel build index.html" as "npm run build"
+
+4.Parcel wll not remove console.log for us, we needa plugin to do that, 
+called babel-plugin-transform-remove-console,
+https://www.npmjs.com/package/babel-plugin-transform-remove-console
+
+5.Warning on keys:
+Each child in a list should have a unique "key" prop.
+->https://reactjs.org/docs/reconciliation.html - Diffing Algorithm -Recursing On Children
+
+6.At the end of the day what does React.createElement give us -> JS Object
+React.createElement => JS Object => HTML(DOM)
+
+7.If we want to build a big html structure, using React.createElement to do that becomes a tideous task
+Thats why we use JSX
+
+8.Wanting to update html using Javascript gave birth to JSX.
+React.createElement started making code messy...hence people started using JSX
+FB developer developed JSX
+
+9.Is JSX, HTML inside JS? 
+-> NO -> JSX isnt HTML, its HTML like syntax
+
+10.Differences between HTML and JSX?
+i)We need to return a single parent element in JSX, In HTML we are free to do whatever we want
+ii)Can implement JS directly inside JSX i.e inside {...}, whereas in HTML we need script tag or
+external JS file to implement JS
+iii)All tags are self-closing in JSX, eg: its possible to have <div></div> as <div/>
+Self-closing tags in HTML like <br/> will work like <br>, but in JSX you need to include slash.
+iv)Its className and HTMLFor in JSX as class and for attribute of label are Javascript reserved words
+v)In JSX, write all HTML attributes in camelCase, eg: onClick becomes onClick
+vi)In HTML we specify styles like this
+eg: <p style="color:red;">I am red</p>
+In JSX we need to specify styles for tags as an Object
+eg: <p style={{ color: "#2ecc71", fontSize: "26px" }}>Hi campers</p> or
+<p style={inlineStyle}>Hi campers</p> where 
+inlineStyle is const inlineStyle = {color: "#2ecc71", fontSize: "26px"};
+Ref: https://www.freecodecamp.org/news/html-vs-jsx-whats-the-difference/#:~:text=HTML%20is%20a%20very%20important,a%20syntactic%20sugar%20for%20React.
+
+11.const heading2 = <h1 id="title" key="h2">Namaste React</h1> 
+Our Browser doesnt understand this piece of JS code if you try running in browser console
+So Babel is something that plays a role in converting this syntax to JS(understandable by browsers)
+
+12.Babel converts JSX to React.createElement and then to an Object and then that JS object is rendered
+to HTML DOM.
+JSX => React.createElement => JS Object => HTML(DOM)
+
+13.Babel comes as a dependency of parcel, so we dint install it
+
+14.const heading = React.createElement("h1",{},"Heading1"); -> React Element
+const heading2 = <h1 id="title" key="h2">Namaste React</h1> -> Right hand side is JSX Expression,
+as a whole its a React Element being created here 
+
+-------------------------------------Components---------------------------------------------
+
+15.Everything is a Component in React
+2 types of Components : 
+i)Functional Component(new way) : 
+Nothing but a JS function that returns a JSX/ Component/ React Element
+Functional components naming convention is PascalCase
+ii)Class based Component(old way)
+
+16.const HeadingComponent = () => {
+    return (
+        <div>
+            <h1>Namaste</h1>
+            <h1>React</h1>
+        </div>
+    );
+}
+
+IS EQUIVALENT TO
+
+const HeadingComponent = () => (
+    <div>
+        <h1>Namaste</h1>
+        <h1>React</h1>
+    </div>
+);
+
+IS EQUIVALENT TO
+
+const HeadingComponent = function () {
+    return (
+        <div>
+            <h1>Namaste</h1>
+            <h1>React</h1>
+        </div>
+    );
+}
+
+17.Rendering element:
+root.render(heading); // heading is React Element
+Rendering React Component:
+root.render(<HeadComponent/>); // HeadComponent is a Functional Component
+
+18.Using Element inside Functional Component:
+{ReactElement} => Object at the end of the day
+
+19. {} -> Inside this we can write any JS code
+
+20.JSX escapes any of data first before executing it on server - avoids XSS attack
+
+21.Component Composition - components can be used inside another components
+
+22.JSX to work, you may or may not use Parcel, but you need to use Babel
+Anyway Babel comes as dependency for Parcel, so its enough to install Parcel
